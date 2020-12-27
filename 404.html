@@ -3,23 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <title>Redirecting...</title>
-    <script>
+    <script type="text/javascript" >
       /**
        * Configuration goes here
+       * Format: https://api.github.com/repos/{owner}/{repo}/issues/
        */
-      // Format: https://api.github.com/repos/{owner}/{repo}/issues/
+
       var GITHUB_ISSUES_LINK =
         "https://api.github.com/repos/paxinla/gh-pages-url-shortener-db/issues/";
-      var PATH_SEGMENTS_TO_SKIP = 1;
+      var PATH_SEGMENTS_TO_SKIP = 0;
 
       /**
        * DO NOT TOUCH ANYTHING BELOW THIS COMMENT UNLESS YOU KNOW WHAT YOU ARE DOING
        */
       function isUrl(url) {
         // Regex from https://stackoverflow.com/a/3809435, with a modification to allow for TLDs of up to 24 characters
-        return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,24}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)+$/.test(
-          url
-        );
+        return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,24}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)+$/.test(url);
       }
 
       function redirect() {
